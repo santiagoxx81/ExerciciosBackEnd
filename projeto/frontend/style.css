@@ -1,0 +1,159 @@
+/* --- Variáveis de Cores e Estilos Globais --- */
+:root {
+  --cor-primaria: #007bff;
+  --cor-primaria-hover: #0056b3;
+  --cor-perigo: #dc3545;
+  --cor-perigo-hover: #c82333;
+  --cor-fundo: #f4f7f6;
+  --cor-container: #ffffff;
+  --cor-texto: #333;
+  --cor-borda: #dee2e6;
+  --sombra-caixa: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --raio-borda: 8px;
+}
+
+/* --- Reset e Estilos Base --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 30px;
+  background-color: var(--cor-container);
+  border-radius: var(--raio-borda);
+  box-shadow: var(--sombra-caixa);
+}
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #2c3e50;
+}
+
+/* --- Estilos do Formulário --- */
+#produto-form {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha em telas pequenas */
+  gap: 15px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+#produto-form input {
+  flex-grow: 1; /* Faz os inputs crescerem para ocupar o espaço */
+  padding: 12px;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-borda);
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#produto-form input:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+#produto-form button[type="submit"] {
+  padding: 12px 25px;
+  background-color: var(--cor-primaria);
+  color: white;
+  border: none;
+  border-radius: var(--raio-borda);
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#produto-form button[type="submit"]:hover {
+  background-color: var(--cor-primaria-hover);
+}
+
+.link-busca {
+    display: block;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--cor-primaria);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.link-busca:hover {
+    text-decoration: underline;
+}
+
+
+/* --- Estilos da Tabela --- */
+table {
+  width: 100%;
+  border-collapse: collapse; /* Remove o espaço entre as bordas das células */
+  margin-top: 20px;
+}
+
+thead th {
+  background-color: #e9ecef;
+  color: #495057;
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--cor-borda);
+  transition: background-color 0.2s;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f8f9fa; /* Efeito zebrado para melhor leitura */
+}
+
+tbody tr:hover {
+  background-color: #e2e6ea;
+}
+
+tbody td {
+  padding: 15px;
+  vertical-align: middle;
+}
+
+/* --- Estilos dos Botões de Ação na Tabela --- */
+tbody td button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  margin-right: 10px;
+  padding: 5px;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  line-height: 1;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Botão Editar */
+tbody td button:first-of-type:hover {
+  color: var(--cor-primaria);
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
+/* Botão Excluir */
+tbody td button:last-of-type:hover {
+  color: var(--cor-perigo);
+  background-color: rgba(220, 53, 69, 0.1);
+}
