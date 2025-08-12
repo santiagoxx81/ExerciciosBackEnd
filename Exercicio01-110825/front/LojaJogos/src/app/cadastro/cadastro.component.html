@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>Cadastro de Jogos</h1>
+
+  <form #form="ngForm" (ngSubmit)="form.valid && (editando ? editar() : salvar())">
+    
+    <input [(ngModel)]="jogo.nome" name="nome" placeholder="Nome do Jogo" required="abc">
+    <input [(ngModel)]="jogo.tipo" name="tipo" placeholder="Categoria do jogo" required>
+    <input [(ngModel)]="jogo.ano" name="ano" placeholder="Ano do lançamento" required>
+
+    <button *ngIf="!editando" type="submit" [disabled]="form.invalid">Salvar</button>
+    <button *ngIf="editando" type="submit" [disabled]="form.invalid">Atualizar</button>
+  
+  </form>
+
+  <table>
+    <tr>
+      <th>Nome</th>
+      <th>Tipo</th>
+      <th>Ano</th>
+      <th>Ações</th>
+    </tr>
+    <tr *ngFor="let j of jogos">
+      <td>{{j.nome}}</td>
+      <td>{{j.tipo}}</td>
+      <td>{{j.ano}}</td>
+      <td>
+        <button (click)="prepararEdicao(j)">Editar</button>
+        <button (click)="excluir(j.id!)">Excluir</button>
+      </td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,77 @@
+/* Define cores principais para facilitar a customização */
+:host {
+  --cor-primaria: #007bff;
+  --cor-primaria-hover: #0056b3;
+  --cor-fundo: #f4f7f6;
+  --cor-borda: #dee2e6;
+  --sombra-caixa: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Centraliza o container principal */
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: var(--sombra-caixa);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* Estilo para os campos de texto e botões */
+input,
+button {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  border: 1px solid var(--cor-borda);
+  font-size: 1rem;
+}
+
+button {
+  background-color: var(--cor-primaria);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: var(--cor-primaria-hover);
+}
+
+/* Estilo da tabela */
+table {
+  width: 100%;
+  margin-top: 2rem;
+  border-collapse: collapse; /* Une as bordas das células */
+}
+
+th, td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+/* Cabeçalho da tabela com cor de fundo */
+th {
+  background-color: var(--cor-fundo);
+}
+
+/* Ações na tabela para alinhar os botões */
+td:last-child {
+  display: flex;
+  gap: 0.5rem; /* Espaço entre os botões de editar e excluir */
+}
+
+td:last-child button {
+  width: auto; /* Para que os botões não ocupem 100% da célula */
+  padding: 0.4rem 0.8rem;
+}
